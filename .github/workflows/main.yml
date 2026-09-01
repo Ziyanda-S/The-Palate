@@ -16,42 +16,36 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Get the project code
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      # Install Node.js
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
 
-      # Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      # Build Ionic/Angular application
-      - name: Build application
+      - name: Build
         run: npm run build
 
-      # Configure GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # Upload the built application
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./www
 
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
-    runs-on: ubuntu-latest
-    needs: build
 
     permissions:
       pages: write
