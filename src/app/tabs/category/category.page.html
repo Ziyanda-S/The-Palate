@@ -1,0 +1,36 @@
+<ion-content [fullscreen]="true" class="page-content">
+  <div class="app-shell">
+    <div class="page-header">
+      <h1 class="font-display">Categories</h1>
+      <p>Browse The Palate's menu by course</p>
+    </div>
+
+    <div class="chip-row">
+      <button
+        *ngFor="let cat of categories"
+        [class.active]="cat === activeCategory"
+        (click)="select(cat)">
+        {{ cat }}
+      </button>
+    </div>
+
+    <div class="grid">
+      <div class="grid-card" *ngFor="let item of filtered">
+        <div class="plate-art" [ngClass]="item.accent">
+          <img *ngIf="item.photoUrl" [src]="item.photoUrl" class="dish-photo" alt="{{ item.name }}" />
+    <ion-icon *ngIf="!item.photoUrl" [name]="item.icon"></ion-icon>
+        </div>
+        <div class="grid-info">
+          <h3>{{ item.name }}</h3>
+          <p>{{ item.subtitle }}</p>
+        </div>
+        <span class="price">R{{ item.price }}</span>
+      </div>
+
+      <div class="empty" *ngIf="!filtered.length">
+        <ion-icon name="restaurant-outline"></ion-icon>
+        <p>No dishes in this category yet.</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

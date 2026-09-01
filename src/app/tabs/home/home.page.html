@@ -1,0 +1,115 @@
+<ion-content [fullscreen]="true" class="home-content">
+  <div class="app-shell">
+
+    <!-- HERO -->
+    <div class="hero">
+  <img src="assets/images/hero.jpg" class="hero-bg" alt="" />
+  <div class="hero-overlay"></div>
+
+  <div class="hero-top">
+    <button class="icon-btn glass" aria-label="Open menu" (click)="openMenu()">
+  <ion-icon name="menu-outline"></ion-icon>
+</button>
+
+   <div class="search-pill glass">
+  <ion-icon name="search-outline"></ion-icon>
+  <input type="text" placeholder="Search The Palate" [(ngModel)]="searchTerm" />
+</div>
+
+    <button class="icon-btn glass" aria-label="Search">
+      <ion-icon name="search-outline"></ion-icon>
+    </button>
+  </div>
+
+  <div class="hero-copy">
+  <span class="eyebrow">{{ heroSlides[activeDot].eyebrow }}</span>
+  <h1 class="font-display">
+    {{ heroSlides[activeDot].title }}<br /><em>{{ heroSlides[activeDot].highlight }}</em>
+  </h1>
+  <p>{{ heroSlides[activeDot].subtitle }}</p>
+</div>
+
+  <div class="dots">
+  <span
+    *ngFor="let slide of heroSlides; let i = index"
+    [class.active]="i === activeDot"
+    (click)="setSlide(i)">
+  </span>
+</div>
+
+</div>
+
+    <!-- SHEET -->
+    <div class="sheet">
+      <div class="sheet-search">
+        <div class="search-pill light">
+  <ion-icon name="search-outline"></ion-icon>
+  <input type="text" placeholder="Search dishes, ingredients..." [(ngModel)]="searchTerm" />
+</div>
+        <button class="icon-btn outline" aria-label="Favorites" (click)="goToFavorites()">
+  <ion-icon name="heart-outline"></ion-icon>
+</button>
+      </div>
+
+      <div class="menu-heading">
+        <h2 class="font-display">Menu</h2>
+        <div class="category-tabs">
+          <button
+            *ngFor="let cat of categories"
+            [class.active]="cat === activeCategory"
+            (click)="selectCategory(cat)">
+            {{ cat }}
+          </button>
+        </div>
+      </div>
+
+      <div class="menu-scroll">
+        <div class="menu-card" *ngFor="let item of filteredMenu">
+          <div class="plate-art card-plate" [ngClass]="item.accent">
+            <img *ngIf="item.photoUrl" [src]="item.photoUrl" class="dish-photo" alt="{{ item.name }}" />
+  <ion-icon *ngIf="!item.photoUrl" [name]="item.icon"></ion-icon>
+            <button class="card-more" (click)="openItemActions(item)" aria-label="Options">
+              <ion-icon name="ellipsis-horizontal-outline"></ion-icon>
+            </button>
+            <ion-icon
+              *ngIf="item.isFavorite"
+              name="cart"
+              class="badge badge-fav"></ion-icon>
+            <ion-icon
+              *ngIf="item.isSaved"
+              name="location"
+              class="badge badge-save"></ion-icon>
+          </div>
+          <h3>{{ item.name }}</h3>
+          <p>{{ item.subtitle }}</p>
+          <span class="price">R{{ item.price }}</span>
+        </div>
+      </div>
+
+      <div class="promo-card">
+        <div class="promo-avatar">
+  <img src="assets/images/Chef.jpeg" class="avatar-photo" alt="Chef" />
+</div>
+        <div class="promo-copy">
+          <span class="promo-eyebrow"><ion-icon name="star"></ion-icon> Chef's Table &middot; Tonight</span>
+          <h4>Reserve the Chef's Table</h4>
+          <p>Seats close 9:42 PM</p>
+        </div>
+        <button class="promo-btn" (click)="reserve()">Reserve</button>
+      </div>
+      <div class="events-section">
+  <h2 class="font-display">Upcoming Events</h2>
+  <div class="event-card" *ngFor="let e of events">
+    <div class="event-date">
+      <span>{{ e.date }}</span>
+    </div>
+    <div class="event-info">
+      <h4>{{ e.title }}</h4>
+      <p>{{ e.subtitle }}</p>
+    </div>
+  </div>
+</div>
+    </div>
+
+  </div>
+</ion-content>

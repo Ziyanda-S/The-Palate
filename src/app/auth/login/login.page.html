@@ -1,0 +1,28 @@
+<ion-content [fullscreen]="true" class="auth-content">
+  <div class="app-shell">
+    <div class="auth-wrap">
+      <span class="eyebrow">WELCOME BACK</span>
+      <h1 class="font-display">Sign in to <em>The Palate</em></h1>
+      <p class="sub">Log in to reserve tables and save your favorite dishes.</p>
+
+      <form (ngSubmit)="submit()" #loginForm="ngForm">
+        <label>Email</label>
+        <input type="email" name="email" [(ngModel)]="email" placeholder="you@example.com" required />
+
+        <label>Password</label>
+        <input type="password" name="password" [(ngModel)]="password" placeholder="••••••••" required />
+
+        <p class="error" *ngIf="error">{{ error }}</p>
+
+        <button type="submit" class="primary-btn" [disabled]="loading || loginForm.invalid">
+          {{ loading ? 'Signing in…' : 'Sign In' }}
+        </button>
+      </form>
+
+      <p class="switch">
+        Don't have an account?
+        <a (click)="goToRegister()">Create one</a>
+      </p>
+    </div>
+  </div>
+</ion-content>

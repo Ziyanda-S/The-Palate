@@ -1,0 +1,29 @@
+<ion-content [fullscreen]="true" class="page-content">
+  <div class="app-shell">
+    <div class="page-header">
+      <h1 class="font-display">Saved</h1>
+      <p>Dishes you've saved for later</p>
+    </div>
+
+    <div class="grid">
+      <div class="grid-card" *ngFor="let item of saved">
+        <div class="plate-art" [ngClass]="item.accent">
+          <ion-icon [name]="item.icon"></ion-icon>
+        </div>
+        <div class="grid-info">
+          <h3>{{ item.name }}</h3>
+          <p>{{ item.subtitle }}</p>
+        </div>
+        <span class="price">R{{ item.price }}</span>
+        <button class="remove-btn" (click)="remove(item)" aria-label="Remove">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </div>
+
+      <div class="empty" *ngIf="!saved.length">
+        <ion-icon name="location-outline"></ion-icon>
+        <p>Nothing saved yet. Tap the "..." on any dish to save one.</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

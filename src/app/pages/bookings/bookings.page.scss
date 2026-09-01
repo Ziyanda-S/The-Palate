@@ -1,0 +1,56 @@
+@import '../../../theme/page-shared';
+
+.booking-card {
+  position: relative;
+  background: var(--palate-white);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 10px 24px -16px rgba(0, 0, 0, 0.25);
+
+  .booking-info {
+    h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--palate-black);
+      margin: 0 0 4px;
+    }
+
+    p {
+      font-size: 11.5px;
+      color: var(--palate-text-muted);
+      margin: 0;
+    }
+
+    .date {
+      margin-top: 4px;
+    }
+  }
+
+  .status {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--palate-gold);
+    background: rgba(217, 175, 108, 0.15);
+    padding: 4px 10px;
+    border-radius: 12px;
+
+    &.cancelled {
+      color: var(--palate-text-muted);
+      background: rgba(13, 13, 13, 0.06);
+    }
+  }
+
+  .cancel-btn {
+    margin-top: 12px;
+    background: none;
+    border: 1px solid rgba(13, 13, 13, 0.15);
+    border-radius: 10px;
+    padding: 7px 14px;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--palate-black);
+  }
+}

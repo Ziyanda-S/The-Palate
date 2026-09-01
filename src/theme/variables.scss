@@ -1,0 +1,33 @@
+// The Palate Restaurant — design tokens
+// Palette derived from the reference mock: near-black hero, cream sheet, warm gold accent.
+
+:root {
+  // Core palette
+  --palate-black: #0d0d0d;
+  --palate-black-soft: #17171a;
+  --palate-charcoal: #232326;
+  --palate-cream: #f7f5f1;
+  --palate-cream-dim: #efece5;
+  --palate-gold: #d9af6c;
+  --palate-gold-deep: #c99a4e;
+  --palate-text-muted: #9c9a97;
+  --palate-white: #ffffff;
+
+  // Ionic overrides
+  --ion-color-primary: #d9af6c;
+  --ion-color-primary-rgb: 217, 175, 108;
+  --ion-color-primary-contrast: #0d0d0d;
+  --ion-color-primary-contrast-rgb: 13, 13, 13;
+  --ion-color-primary-shade: #c99a4e;
+  --ion-color-primary-tint: #e0bd83;
+
+  --ion-color-dark: #0d0d0d;
+  --ion-color-light: #f7f5f1;
+
+  --ion-background-color: #f7f5f1;
+  --ion-text-color: #0d0d0d;
+  --ion-font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --ion-toolbar-background: transparent;
+  --ion-tab-bar-background: #0d0d0d;
+}

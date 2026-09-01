@@ -1,0 +1,31 @@
+<ion-content [fullscreen]="true" class="auth-content">
+  <div class="app-shell">
+    <div class="auth-wrap">
+      <span class="eyebrow">JOIN US</span>
+      <h1 class="font-display">Create your <em>Palate</em> account</h1>
+      <p class="sub">Save your favorite dishes and reserve a table in seconds.</p>
+
+      <form (ngSubmit)="submit()" #registerForm="ngForm">
+        <label>Name</label>
+        <input type="text" name="name" [(ngModel)]="name" placeholder="Your name" required />
+
+        <label>Email</label>
+        <input type="email" name="email" [(ngModel)]="email" placeholder="you@example.com" required />
+
+        <label>Password</label>
+        <input type="password" name="password" [(ngModel)]="password" placeholder="At least 6 characters" required />
+
+        <p class="error" *ngIf="error">{{ error }}</p>
+
+        <button type="submit" class="primary-btn" [disabled]="loading || registerForm.invalid">
+          {{ loading ? 'Creating account…' : 'Create Account' }}
+        </button>
+      </form>
+
+      <p class="switch">
+        Already have an account?
+        <a (click)="goToLogin()">Sign in</a>
+      </p>
+    </div>
+  </div>
+</ion-content>

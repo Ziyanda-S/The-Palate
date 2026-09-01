@@ -1,0 +1,32 @@
+<ion-content [fullscreen]="true" class="page-content">
+  <div class="app-shell">
+    <div class="page-header">
+      <h1 class="font-display">My Bookings</h1>
+      <p>Your table reservations at The Palate</p>
+    </div>
+
+    <div class="grid">
+      <div class="booking-card" *ngFor="let b of bookings">
+        <div class="booking-info">
+          <h3>{{ b.title }}</h3>
+          <p>Reserved for {{ b.guestName }}</p>
+          <p class="date">{{ formatDate(b.createdAt) }}</p>
+        </div>
+        <span class="status" [class.cancelled]="b.status === 'cancelled'">
+          {{ b.status === 'confirmed' ? 'Confirmed' : 'Cancelled' }}
+        </span>
+        <button
+          class="cancel-btn"
+          *ngIf="b.status === 'confirmed'"
+          (click)="cancel(b)">
+          Cancel
+        </button>
+      </div>
+
+      <div class="empty" *ngIf="!bookings.length">
+        <ion-icon name="calendar-outline"></ion-icon>
+        <p>No bookings yet. Reserve a table from Home.</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

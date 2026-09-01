@@ -1,0 +1,49 @@
+@import "@ionic/angular/css/core.css";
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+* {
+  font-family: 'Manrope', sans-serif;
+}
+
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+// ---------------------------------------------------------------
+// Responsive shell: phones render full-bleed, tablets/laptops get
+// a centered "device frame" so the design reads correctly at any
+// width instead of stretching a phone layout edge-to-edge.
+// ---------------------------------------------------------------
+
+
+// Plate placeholder art — used on menu cards in place of stock photography.
+// Swap these divs for <img> tags once real dish photography is available.
+.plate-art {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: inherit;
+
+  ion-icon {
+    font-size: 30%;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  &.plate-a { background: radial-gradient(circle at 35% 30%, #4a3524, #201811 70%); }
+  &.plate-b { background: radial-gradient(circle at 35% 30%, #3f4a3a, #171c15 70%); }
+  &.plate-c { background: radial-gradient(circle at 35% 30%, #4a3a2e, #1c150f 70%); }
+  &.plate-d { background: radial-gradient(circle at 35% 30%, #4a2e2e, #1a1010 70%); }
+}
+
+::-webkit-scrollbar { display: none; }

@@ -1,0 +1,127 @@
+.page-content {
+  --background: var(--palate-cream);
+}
+
+.page-header {
+  padding: 28px 20px 6px;
+
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--palate-black);
+    margin: 0 0 4px;
+  }
+
+  p {
+    font-size: 12.5px;
+    color: var(--palate-text-muted);
+    margin: 0;
+  }
+}
+
+.chip-row {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 16px 20px 4px;
+
+  button {
+    flex: 0 0 auto;
+    border: 1px solid rgba(13, 13, 13, 0.12);
+    background: var(--palate-white);
+    color: var(--palate-black);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 18px;
+    white-space: nowrap;
+
+    &.active {
+      background: var(--palate-black);
+      color: var(--palate-gold);
+      border-color: var(--palate-black);
+    }
+  }
+}
+
+.grid {
+  padding: 18px 20px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.grid-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--palate-white);
+  border-radius: 18px;
+  padding: 10px;
+  box-shadow: 0 10px 24px -16px rgba(0, 0, 0, 0.25);
+
+  .plate-art {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    border-radius: 14px;
+    ion-icon { font-size: 26px; }
+  }
+
+  .grid-info {
+    flex: 1;
+    min-width: 0;
+
+    h3 {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--palate-black);
+      margin: 0 0 3px;
+    }
+
+    p {
+      font-size: 11px;
+      color: var(--palate-text-muted);
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  .price {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--palate-black);
+  }
+
+  .remove-btn {
+    background: none;
+    border: none;
+    ion-icon { color: var(--palate-text-muted); font-size: 20px; }
+  }
+}
+
+.empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--palate-text-muted);
+
+  ion-icon {
+    font-size: 42px;
+    color: rgba(13, 13, 13, 0.15);
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 13px;
+    margin: 0;
+  }
+}
+
+.dish-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
