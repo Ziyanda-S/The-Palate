@@ -1,0 +1,29 @@
+<ion-content [fullscreen]="true" class="page-content">
+  <div class="app-shell">
+    <div class="page-header">
+      <h1 class="font-display">Recipes</h1>
+      <p>Learn to make our signature dishes at home</p>
+    </div>
+
+    <div class="grid">
+      <div class="recipe-card" *ngFor="let r of recipes">
+        <div class="recipe-top" (click)="toggle(r)">
+          <img [src]="r.photoUrl" class="recipe-photo" alt="{{ r.dishName }}" />
+          <h3>{{ r.dishName }}</h3>
+          <ion-icon [name]="expandedId === r.id ? 'add-outline' : 'add-outline'" class="expand-icon"></ion-icon>
+        </div>
+
+        <div class="recipe-details" *ngIf="expandedId === r.id">
+          <h4>Ingredients</h4>
+          <ul>
+            <li *ngFor="let ing of r.ingredients">{{ ing }}</li>
+          </ul>
+          <h4>Steps</h4>
+          <ol>
+            <li *ngFor="let step of r.steps">{{ step }}</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

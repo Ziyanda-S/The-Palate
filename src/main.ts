@@ -13,7 +13,7 @@ import {
   menuOutline,
   ellipsisHorizontalOutline,
   heartOutline,
-  restaurantOutline,
+  restaurantOutline, restaurant,
   star,
   person,
   closeOutline,

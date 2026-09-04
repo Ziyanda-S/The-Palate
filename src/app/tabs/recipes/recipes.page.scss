@@ -1,0 +1,57 @@
+@import '../../../theme/page-shared';
+
+.recipe-card {
+  background: var(--palate-white);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px -16px rgba(0, 0, 0, 0.25);
+}
+
+.recipe-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px;
+  cursor: pointer;
+
+  .recipe-photo {
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+    object-fit: cover;
+  }
+
+  h3 {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--palate-black);
+    margin: 0;
+  }
+
+  .expand-icon {
+    font-size: 20px;
+    color: var(--palate-gold);
+  }
+}
+
+.recipe-details {
+  padding: 0 16px 16px;
+
+  h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--palate-black);
+    margin: 10px 0 6px;
+  }
+
+  ul, ol {
+    margin: 0;
+    padding-left: 18px;
+    li {
+      font-size: 12px;
+      color: var(--palate-text-muted);
+      margin-bottom: 4px;
+    }
+  }
+}

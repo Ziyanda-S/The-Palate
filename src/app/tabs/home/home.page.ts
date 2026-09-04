@@ -83,9 +83,9 @@ export class HomePage implements OnInit {
     this.menuCtrl.open();
   }
 
-  goToFavorites(): void {
-    this.router.navigate(['/tabs/favorites']);
-  }
+  goToRecipes(): void {
+  this.router.navigate(['/tabs/recipes']);
+}
 
   private requireAuth(): boolean {
     if (this.authService.isLoggedIn) {
